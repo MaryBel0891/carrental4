@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd"
+             version="2.2">
+    <persistence-unit name="CARPARK" transaction-type="JTA">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <jta-data-source>jdbc/carparkdb</jta-data-source>
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <properties>
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>-->
+<!--            <property name="hibernate.hbm2ddl.auto" value="update"/>-->
+<!--            <property name="hibernate.transaction.factory_class" value="org.hibernate.transaction.CMTTransactionFactory"/>-->
+<!--            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>-->
+<!--            <property name="hibernate.transaction.manager_lookup_class" value="org.hibernate.transaction.SunONETransactionManagerLookup" />-->
+<!--            <property-->
+<!--                    name="openejb.jpa.auto-scan"-->
+<!--                    value="true" />-->
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.connection.driver_class"  value="com.mysql.jdbc.Driver"/>
+            <property name="hibernate.transaction.jta.platform" value="org.hibernate.service.jta.platform.internal.SunOneJtaPlatform"/>
+            <property name="hibernate.dialect" value="org.hibernate.dialect.MySQLDialect"/>
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/carparkdb2?serverTimezone=UTC&amp;allowPublicKeyRetrieval=true&amp;useSSL=false"/>
+            <property name="hibernate.connection.username" value="root"/>
+            <property name="hibernate.connection.password" value="root"/>
+            <property name="hibernate.show_sql" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
